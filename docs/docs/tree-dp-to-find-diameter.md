@@ -20,9 +20,7 @@ The distance from node `i` to the **farthest node *outside* its subtree**.
 
 Once we know both, the answer for a node is simply:
 
-$$
-\text{maxDist}(i) = \max(\text{down}[i],\ \text{up}[i])
-$$
+## `maxdist[i] = max(down[i],up[i])`
 
 ---
 
@@ -31,9 +29,9 @@ $$
 `down[i]` is easy to compute.  
 For each child `i`, the longest path from `i` downwards is:
 
-$$
-\text{down}[i] = \max(\text{down}[i],\ \text{down}[x] + 1)
-$$
+
+## `down[i] = max(down[i],down[x] + 1)`
+
 
 Code:
 
