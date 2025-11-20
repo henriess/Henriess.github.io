@@ -1,5 +1,6 @@
 ---
 layout: home
+title: "Home"
 ---
 
-Tracking of my math and programming progress
+A blog to track my math and programming progress
