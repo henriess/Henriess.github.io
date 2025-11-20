@@ -1,6 +1,9 @@
 ---
-layout: default
 title: Home
+layout: default
+nav_order: 1
 ---
 
-A place to track my math and programming progress.
+# Welcome
+
+Storage of math and programming notes
