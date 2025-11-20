@@ -20,9 +20,9 @@ The distance from node \( i \) to the **farthest node *outside* its subtree**.
 
 Once we know both, the answer for a node is simply:
 
-\[
+$$
 \text{maxDist}(i) = \max(\text{down}[i],\ \text{up}[i])
-\]
+$$
 
 ---
 
@@ -31,9 +31,9 @@ Once we know both, the answer for a node is simply:
 `down[i]` is easy to compute.  
 For each child \( x \), the longest path from \( i \) downwards is:
 
-\[
+$$
 \text{down}[i] = \max(\text{down}[i],\ \text{down}[x] + 1)
-\]
+$$
 
 Code:
 
@@ -72,7 +72,6 @@ For a child `x` of `u`:
 
 ```cpp
 vector<long long> up1;
-
 void dfs2(long long u,long long p) { // rerooting dfs 
     long long best = -1;
     long long secondbest = -1;
