@@ -29,7 +29,7 @@ $$
 ## 1. Computing `down[]` — bottom-up DFS
 
 `down[i]` is easy to compute.  
-For each child \( x \), the longest path from \( i \) downwards is:
+For each child `i`, the longest path from `i` downwards is:
 
 $$
 \text{down}[i] = \max(\text{down}[i],\ \text{down}[x] + 1)
