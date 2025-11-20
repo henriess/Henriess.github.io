@@ -10,3 +10,5 @@ plugins:
 
 url: "https://henriess.github.io"
 baseurl: ""
+just_the_docs:
+  math: true
