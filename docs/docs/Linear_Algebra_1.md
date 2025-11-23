@@ -191,9 +191,10 @@ $$
 ## Transpose Laws
 
 $$
-(A^T)^T = A \\
-This is obvious
+(A^T)^T = A
 $$
+This is obvious.
+
 
 $$
 (A + B)^T = A^T + B^T
