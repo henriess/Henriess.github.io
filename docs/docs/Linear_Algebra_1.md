@@ -206,26 +206,69 @@ $$
 (AB)^T = B^T A^T
 $$
 
-**A matrix with all entries equal to 0 is a 0 matrix**
+## Zero Matrix
 
-## A identity matrix is one that has 1's on its main diagonal and 0 everywhere else. It is denoted by I 
-AI = A 
-If AC = A for **all** n * n matrices A, then C = I 
+A matrix with all entries equal to 0 is called the **zero matrix**.
 
-## Power Laws 
-A^3 = A * A  * A
-A^0 = I 
+---
+
+## Identity Matrix
+
+An identity matrix has **1's on its main diagonal** and **0's everywhere else**.  
+It is denoted by \(I\).
+
+For any matrix \(A\):
+
 $$
-(AB)^r \neq A^rB^r
+AI = IA = A
 $$
-A^rA^s = A^(r+s)
-(A^r)^s = A^(rs)
 
-## Inverse of a Matrix 
-If there exists a matrix B where AB = BA = I, B is the inverse of A and we call A invertible or non-singular 
+If \(AC = A\) for **all** \(n \times n\) matrices \(A\), then \(C = I\).
 
-`How do we check if a matrix is invertible? And if so, what is its inverse?`
-Let  
+---
+
+## Power Laws
+
+For an \(n \times n\) matrix \(A\):
+
+$$
+A^3 = A \cdot A \cdot A
+$$
+
+$$
+A^0 = I
+$$
+
+$$
+(AB)^r \neq A^r B^r
+$$
+
+Exponent laws:
+
+$$
+A^r A^s = A^{\, r+s}
+$$
+
+$$
+(A^r)^s = A^{\, rs}
+$$
+
+---
+
+## Inverse of a Matrix
+
+If there exists a matrix \(B\) such that
+
+$$
+AB = BA = I,
+$$
+
+then \(B\) is the **inverse** of \(A\), and we say \(A\) is **invertible** or **non-singular**.
+
+### **How do we check if a matrix is invertible?**
+
+Let
+
 $$
 A = \begin{pmatrix}
 a & b \\
@@ -233,7 +276,13 @@ c & d
 \end{pmatrix}.
 $$
 
-If \(ad - bc \neq 0\), then \(A\) is invertible, and its inverse is
+A is invertible **if and only if**
+
+$$
+ad - bc \neq 0.
+$$
+
+If this condition holds, then the inverse of \(A\) is:
 
 $$
 A^{-1}
@@ -243,7 +292,7 @@ d & -b \\
 -c & a
 \end{pmatrix}.
 $$
-What even is this 😭
+
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
         data-repo-id="R_kgDOQZXWAQ"
