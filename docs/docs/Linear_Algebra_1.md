@@ -94,6 +94,29 @@ $$
 \(A - B)_{ij} = A_{ij} - B_{ij}
 $$
 
+
+## Multiplication by a constant 
+
+$$
+\(k(A))_{ij} = k(A_{ij})
+$$
+
+## Mutiplication of Matrices 
+For the product AB to be defined, the number of columns in A must be equal to number of rows in B 
+
+$$
+A = \begin{bmatrix}
+3 & 0 \\
+-2 & 2 \\
+1 & 1  \\
+\end{bmatrix}
+\qquad
+B = \begin{bmatrix}
+1 & 4 & 2 \\
+3 & 1 & 5 \\
+\end{bmatrix}
+$$
+
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
         data-repo-id="R_kgDOQZXWAQ"
