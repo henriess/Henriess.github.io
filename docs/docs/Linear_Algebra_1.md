@@ -206,6 +206,7 @@ $$
 (AB)^T = B^T A^T
 $$
 
+** A matrice with all entries equal to 0 is a 0 matrix **
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
         data-repo-id="R_kgDOQZXWAQ"
