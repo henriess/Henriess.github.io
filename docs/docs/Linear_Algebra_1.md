@@ -191,7 +191,7 @@ $$
 ## Transpose Laws
 
 $$
-(A^T)^T = A 
+(A^T)^T = A\
 This is obvious
 $$
 
