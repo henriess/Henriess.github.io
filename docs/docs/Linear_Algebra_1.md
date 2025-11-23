@@ -9,13 +9,10 @@ nav_order: 3
 
 The system of linear equations:
 
-\[
-\begin{aligned}
-1x - 3y + 0z &= 2 \\
--1x + 1y + 5z &= 2 \\
-2x - 5y + 1z &= 0
-\end{aligned}
-\]
+$$1x - 3y + 0z = 2$$
+$$-1x + y + 5z = 2$$
+$$2x - 5y + 1z = 0$$
+
 
 can be written in augmented matrix form as:
 
