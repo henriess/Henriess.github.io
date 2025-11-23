@@ -128,21 +128,22 @@ We fill the product matrix **column by column**.
 
 1. **Row 1 of A × Column 1 of B**
 
-   $$
-   AB_{11} = 3(1) + 0(3) = 3
-   $$
+$$
+AB_{11} = 3(1) + 0(3) = 3
+$$
 
 2. **Row 2 of A × Column 1 of B**
 
-   $$
-   AB_{21} = (-2)(1) + 2(3) = 5
-   $$
+$$
+AB_{21} = (-2)(1) + 2(3) = 5
+$$
 
 3. **Row 3 of A × Column 1 of B**
 
-   $$
-   AB_{31} = 1(1) + 1(3) = 4
-   $$
+$$
+AB_{31} = 1(1) + 1(3) = 4
+$$
+
 
 Repeating this for each column of \(B\), we obtain:
 
@@ -185,7 +186,7 @@ $$
 `A + B = B + A`\
 `A + (B + C) = (A + B) + C`\
 `A(BC) = (AB)C`\
-`A(B+C) = AB + AC`\
+`A(B+C) = AB + AC`
 
 
 <script src="https://giscus.app/client.js"
