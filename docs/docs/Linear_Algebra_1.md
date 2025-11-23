@@ -131,13 +131,41 @@ The third entry of AB, $$AB_{31} $$ is 1 * 1 + 3 * 1 = 4
 Repeat the steps using the subsequent columns of B 
 
 The resulting matrix have 3 rows and 3 columns 
+
 $$
-A = \begin{bmatrix}
+AB = \begin{bmatrix}
 3 & 12 & 6 \\
 5 & -2 & 8 \\
 4 & 5 & 7  \\
 \end{bmatrix}
 $$
+
+## Transpose of a matrix 
+If A is a matrix, the transpose of A, $$
+A^T
+$$
+is a result of the interchange of rows and columns 
+
+For example, if 
+
+$$
+A = \begin{pmatrix}
+2 & 3 \\
+1 & 4 \\
+-5 & 6
+\end{pmatrix},
+$$
+
+then
+
+$$
+A^T = \begin{pmatrix}
+2 & 1 & -5 \\
+3 & 4 & 6
+\end{pmatrix}.
+$$
+
+
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
         data-repo-id="R_kgDOQZXWAQ"
