@@ -165,6 +165,12 @@ A^T = \begin{pmatrix}
 \end{pmatrix}.
 $$
 
+## Matrix Laws 
+`A + B = B + A`
+`A + (B + C) = (A + B) + C
+`A(BC) = (AB)C`
+`A(B+C) = AB + AC`
+
 
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
