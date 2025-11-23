@@ -75,9 +75,10 @@ $$
 
 The **trace** of a square matrix is the sum of the diagonal entries:
 
-\[
+$$
 \text{tr}(A) = a_{11} + a_{22} + \cdots + a_{nn}
-\]
+$$
+
 
 ---
 
@@ -85,13 +86,13 @@ The **trace** of a square matrix is the sum of the diagonal entries:
 
 For matrices \(A\) and \(B\):
 
-\[
-(A + B)_{ij} = A_{ij} + B_{ij}
-\]
+$$
+\(A + B)_{ij} = A_{ij} + B_{ij}
+$$
 
-\[
-(A - B)_{ij} = A_{ij} - B_{ij}
-\]
+$$
+\(A - B)_{ij} = A_{ij} - B_{ij}
+$$
 
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
