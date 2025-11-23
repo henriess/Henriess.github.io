@@ -117,6 +117,27 @@ B = \begin{bmatrix}
 \end{bmatrix}
 $$
 
+We fill the matrice up column by column 
+
+`1. Take the first row of A and first column of B 
+The first entry of AB, $$ AB_{11} $$ is 3 * 1 + 0 * 3 = 3`
+
+`2. Take the second row of A and the first column of B 
+The second entry of AB, $$AB_{21} $$ is -1 * 1 + 2 * 3 = 5
+
+`3. Take the third row of A and the first column of B
+The third entry of AB, $$AB_{31} $$ is 1 * 1 + 3 * 1 = 4
+`
+Repeat the steps using the subsequent columns of B 
+
+The resulting matrix have 3 rows and 3 columns 
+$$
+A = \begin{bmatrix}
+3 & 12 & 6 \\
+5 & -2 & 8 \\
+4 & 5 & 7  \\
+\end{bmatrix}
+$$
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
         data-repo-id="R_kgDOQZXWAQ"
