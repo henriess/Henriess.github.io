@@ -188,6 +188,23 @@ $$
 `A(BC) = (AB)C`\
 `A(B+C) = AB + AC`
 
+## Transpose Laws
+
+$$
+(A^T)^T = A This is obvious
+$$
+
+$$
+(A + B)^T = A^T + B^T
+$$
+
+$$
+(kA)^T = kA^T
+$$
+
+$$
+(AB)^T = B^T A^T
+$$
 
 <script src="https://giscus.app/client.js"
         data-repo="henriess/henriess.github.io"
