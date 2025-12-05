@@ -290,17 +290,13 @@ for (int i = 0; i < compressed.size(); i++) {
 }
 ```
 
+---
 # Problem 20 — Volcano
 
 Overall a pretty straightforward problem.  
 My first thought was to BFS on the grid then find all connected components.  
-After coding, I realised BFS would never work because the grid constraints are up to:
-
-$$
-10^9 \times 10^9
-$$
-
-This problem instead reduces to **basic geometry + UFDS**.
+After coding, I realised BFS would never work because the grid constraints are up to: 1e9
+But this problem is basically **basic geometry + UFDS**.
 
 ---
 
