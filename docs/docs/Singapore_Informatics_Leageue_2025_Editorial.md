@@ -303,7 +303,7 @@ But this problem is basically **basic geometry + UFDS**.
 
 ## Observation 1 — Each volcano spreads magma as a square of radius \(h\)
 
-A volcano at \((r, c)\) with radius \(h\) creates a square extending \(h\) units in all directions.
+A volcano at $$((r, c)$$) with radius $$(h$$) creates a square extending $$(h$$) units in all directions.
 
 So the problem becomes:
 
@@ -316,8 +316,9 @@ So the problem becomes:
 Two squares intersect if:
 
 $$
-\max(|x_1 - x_2|,\ |y_1 - y_2|) \le r_1 + r_2 + 1
+\max(|x_{1} - x_{2}|,\ |y_{1} - y_{2}|) \le r_{1} + r_{2} + 1
 $$
+
 
 This check runs in **O(1)** time.
 
