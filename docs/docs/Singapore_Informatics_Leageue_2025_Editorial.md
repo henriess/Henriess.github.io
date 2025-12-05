@@ -292,6 +292,7 @@ for (int i = 0; i < compressed.size(); i++) {
 
 ---
 # Problem 20 — Volcano
+**Link:** https://codebreaker.xyz/problem/volcano
 
 Overall a pretty straightforward problem.  
 My first thought was to BFS on the grid then find all connected components.  
@@ -420,3 +421,7 @@ int main() {
 
     cout << finalans;
 }
+```
+
+---
+# Problem 21 : Card Draw 
