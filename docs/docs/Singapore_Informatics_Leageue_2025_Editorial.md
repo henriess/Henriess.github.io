@@ -44,7 +44,7 @@ Prefix sums allow us to obtain sums in **O(1)** time.
 ---
 
 ### **Overall time complexity:**  
-`O(nlogn)
+`O(nlogn)`
 
 ---
 
@@ -158,7 +158,7 @@ I think the intended solution is O(n) but my solution is O(m)?
 ## Observation 1 — People with the same direction should move together
 
 If 1 person moves, there will be space for the next person with the same direction.  
-Hence, instead of caring about individual people, we compress consecutive people with the same direction into one segment.
+Hence, instead of caring about individual people, we compress consecutive people with the same direction into one segment and iterate through segments instead 
 
 ---
 
@@ -174,7 +174,7 @@ This brings the main greedy question: which segment should move?
 More people → more moves → higher contribution to the answer.  
 Thus, when R and L conflict, the segment with more people should move.
 
-The implementation is pretty cancerous, but the idea is straightforward.
+The implementation is pretty cancerous for my method, but the idea is straightforward I think?
 
 ---
 
