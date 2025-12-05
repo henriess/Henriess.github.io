@@ -303,7 +303,7 @@ But this problem is basically **basic geometry + UFDS**.
 
 ## Observation 1 — Each volcano spreads magma as a square of radius \(h\)
 
-A volcano at $$((r, c)$$) with radius $$(h$$) creates a square extending $$(h$$) units in all directions.
+A volcano at $$((r, c))$$ with radius $$(h)$$ creates a square extending $$(h)$$ units in all directions.
 
 So the problem becomes:
 
