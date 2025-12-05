@@ -289,7 +289,138 @@ for (int i = 0; i < compressed.size(); i++) {
     }
 }
 ```
+
+# Problem 20 — Volcano
+
+Overall a pretty straightforward problem.  
+My first thought was to BFS on the grid then find all connected components.  
+After coding, I realised BFS would never work because the grid constraints are up to:
+
+$$
+10^9 \times 10^9
+$$
+
+This problem instead reduces to **basic geometry + UFDS**.
+
 ---
 
-# Problem 20 : Volcano 
+## Observation 1 — Each volcano spreads magma as a square of radius \(h\)
 
+A volcano at \((r, c)\) with radius \(h\) creates a square extending \(h\) units in all directions.
+
+So the problem becomes:
+
+**Count how many squares intersect.**
+
+---
+
+## Observation 2 — Two squares intersect if their Chebyshev distance is small enough
+
+Two squares intersect if:
+
+$$
+\max(|x_1 - x_2|,\ |y_1 - y_2|) \le r_1 + r_2 + 1
+$$
+
+This check runs in **O(1)** time.
+
+If they intersect, unite the volcanoes using UFDS.
+
+---
+
+## Observation 3 — Final answer = number of connected components
+
+After unioning all overlapping volcanoes, simply count how many volcanoes are their own parent.
+
+---
+
+# Code
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<vector<long long>> volcanoes;
+
+// UFDS arrays
+vector<long long> v;
+vector<long long> size1;
+
+int find(int x) {
+    if (x != v[x]) {
+        v[x] = find(v[x]); // Path compression
+    }
+    return v[x];
+}
+
+bool same(int a, int b) {
+    return find(a) == find(b);
+}
+
+void unite(int a, int b) {
+    a = find(a);
+    b = find(b);
+    if (size1[a] < size1[b]) swap(a, b);
+    size1[a] += size1[b];
+    v[b] = a;
+}
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    long long t;
+    cin >> t;
+
+    long long finalans = 0;
+
+    while (t--) {
+        long long l, n;
+        cin >> l >> n;
+
+        volcanoes.clear();
+        for (int i = 0; i < n; i++) {
+            long long r, c, h;
+            cin >> r >> c >> h;
+            volcanoes.push_back({r, c, h});
+        }
+
+        v.resize(n);
+        size1.resize(n);
+        for (int i = 0; i < n; i++) {
+            v[i] = i;
+            size1[i] = 1;
+        }
+
+        // Check all volcano pairs
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+
+                long long row1 = volcanoes[i][0];
+                long long col1 = volcanoes[i][1];
+                long long row2 = volcanoes[j][0];
+                long long col2 = volcanoes[j][1];
+
+                long long d = max(abs(row1 - row2), abs(col1 - col2));
+
+                long long r1 = volcanoes[i][2];
+                long long r2 = volcanoes[j][2];
+
+                if (d <= r1 + r2 + 1) {
+                    if (!same(i, j)) unite(i, j);
+                }
+            }
+        }
+
+        // Count components
+        long long ans = 0;
+        for (int i = 0; i < n; i++) {
+            if (find(i) == i) ans++;
+        }
+
+        finalans += ans;
+    }
+
+    cout << finalans;
+}
