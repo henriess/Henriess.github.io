@@ -426,3 +426,46 @@ int main() {
 
 ---
 # Problem 21 : Card Draw 
+TO BE CONTINUED AFTER I FINISH OPTIMISING IT 
+
+
+---
+# Problem 22 : Cup stacking 
+Finished this problem in 2 minutes. Easily the most guessable problem in the problem set.
+I don't really understand the logic behind putting this problem as problem 23? Seems like a classic div 3 A ngl 
+
+Observation  1 : The stack with the most points should have the most cups, second most points should have second most cups ... 
+Let h be height of cup stack initially.
+Stack with most points will have h cups.
+Stack with second most points will have h-1 cups.
+And so on... 
+
+Code 
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+	long long t;cin >> t;
+	long long finalans = 0;
+	while(t--){
+		long long n;cin >> n;
+		vector<long long> a(n);
+		for(int i = 0;i<n;i++){
+			cin >> a[i];
+		}
+		sort(a.begin(),a.end(),greater<long long>());
+		long long h = n;
+		long long ans = 0;
+		for(int i = 0;i<n;i++){
+			ans += a[i] * h;
+			h-=1;
+		}
+		finalans += ans;
+	}
+	cout << finalans;
+}
+```
