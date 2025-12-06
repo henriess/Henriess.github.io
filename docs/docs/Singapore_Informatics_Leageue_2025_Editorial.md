@@ -431,6 +431,7 @@ TO BE CONTINUED AFTER I FINISH OPTIMISING IT
 
 ---
 # Problem 22 — Cup Stacking
+**Link:** https://codebreaker.xyz/problem/cupstacking
 
 Finished this problem in 2 minutes. Easily the most guessable problem in the entire problem set.  
 Honestly not sure why this was placed as Problem 23 — feels like a classic Codeforces Div 3A.
