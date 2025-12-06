@@ -440,13 +440,13 @@ Honestly not sure why this was placed as Problem 23 — feels like a classic Cod
 
 ## Observation 1 — Higher points → Taller cup stack
 
-Let \(h\) be the height of the stack.
+Let \(h\) be the height of the initial cup stack.
 
 - The stack with **most points** should have **h cups**  
 - The stack with **second most points** should have **h−1 cups**  
 - And so on...
 
-This is the optimal greedy distribution.
+This is the optimal greedy.
 
 ---
 
