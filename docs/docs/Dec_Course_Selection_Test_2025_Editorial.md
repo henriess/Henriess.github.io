@@ -7,6 +7,7 @@ nav_order: 3
 **Link:** https://codebreaker.xyz/problem/evenorodd_ex  
 
 Syntax problem.  
+
 A number is even if:
 
 ```cpp
@@ -144,9 +145,6 @@ I LOVE THIS PROBLEM. I'm so proud that I actually AC'd it. This problem was so d
 - No greedy works since too many conditions  
 - Multi-state Dijkstra is the only approach that can handle all the information
 - Since the answer is a **maximum**, use **bsta**
-
-I literally RTE’d and MLE’d countless times before randomly changing things and somehow AC’ing with pragmas 🤣🤣🤣  
-My solution barely squeezed within the time limit, so I'm genuinely unsure if that's intended.
 
 
 
