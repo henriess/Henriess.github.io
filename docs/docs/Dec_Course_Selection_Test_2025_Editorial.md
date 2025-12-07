@@ -139,16 +139,14 @@ int main() {
 I **LOVE THIS PROBLEM**.  
 I'm honestly so proud that I AC’d it.
 
-The problem statement was extremely long and intimidating, but ironically the core idea is pretty clean:
+I LOVE THIS PROBLEM. I'm so proud that I actually AC'd it. This problem was so deceivingly hard. The problem statement literally took my soul away given how much information it had. Funny enough, the problem was actually surprisingly easy to theory. Unironically the complicated problem statement actually gave a very straightforward solution. Since the problem is so complicated, there is no straightforward greedy so multi-state dijkstra is the only way to handle it. And simply bsta since its a maximising problem. Implementation on the other hand was a nightmare. I literally RTE'd and MLE'd so many times before randomly changing stuff and Ac'd using pragma's 🤣🤣🤣. My solution barely squeezed within the time limit tho, so I wonder if it is intended.
 
-- No greedy works → too many conditions  
-- Multi-state Dijkstra is the only real approach  
-- Since the answer is a **maximum**, use **binary search the answer (BSTA)**  
-
-The *real* challenge is not the theory — it's the **implementation**, which was a complete nightmare.
+- No greedy works since too many conditions  
+- Multi-state Dijkstra is the only approach that can handle all the information
+- Since the answer is a **maximum**, use **bsta**
 
 I literally RTE’d and MLE’d countless times before randomly changing things and somehow AC’ing with pragmas 🤣🤣🤣  
 My solution barely squeezed within the time limit, so I'm genuinely unsure if that's intended.
 
-I’ll add the full explanation + code once I rewrite and clean it.
+
 
