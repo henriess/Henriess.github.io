@@ -227,7 +227,6 @@ bluerot %= 4;
 Without this:
 
 - State size becomes
-\
 $$
 n \times m \times k \times k \quad \text{(MLE)}
 $$
