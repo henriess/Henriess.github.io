@@ -200,6 +200,7 @@ $$
 $$
 
 Where:
+\
 $$
 \begin{aligned}
 \text{redrot} &= \text{number of times red cells rotated} \\
@@ -225,7 +226,8 @@ bluerot %= 4;
 
 Without this:
 
-- State size becomes  
+- State size becomes
+\
 $$
   n \times m \times k \times k \quad \text{(MLE)}
 $$
