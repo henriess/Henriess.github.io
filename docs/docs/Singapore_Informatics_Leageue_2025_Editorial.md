@@ -2,6 +2,15 @@
 title: "Singapore Informatics League 2025 Editorial"
 nav_order: 3
 ---
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 So far, I only managed to solve **5 of the Level 3 and 4 problems**, so this editorial is temporary until I solve more.
 
