@@ -189,8 +189,8 @@ $$
 
 ## Observation 4 — To keep track of the direction changes, add rotation states to the Dijkstra
 
-When leaving a **red** cell, all **blue** arrows rotate.  
-When leaving a **blue** cell, all **red** arrows rotate.
+When leaving a **red** cell, all arrows in **blue** coloured cells rotate.  
+When leaving a **blue** cell, all arrows in **red** coloured cells rotate.
 
 Therefore the Dijkstra state must include both rotation counters:
 
@@ -200,9 +200,12 @@ $$
 
 Where:
 $$
-\text{redrot} = \text{# of red rotations}, \quad
-\text{bluerot} = \text{# of blue rotations}
+\begin{aligned}
+\text{redrot} &= \text{number of times red cells rotated} \\
+\text{bluerot} &= \text{number of times blue cells rotated}
+\end{aligned}
 $$
+
 
 ### Why modulo 4?
 
