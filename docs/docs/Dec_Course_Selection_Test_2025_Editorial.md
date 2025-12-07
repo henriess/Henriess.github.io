@@ -137,9 +137,6 @@ int main() {
 
 # Problem 4 : Reinforcement Learning  
 
-I **LOVE THIS PROBLEM**.  
-I'm honestly so proud that I AC’d it.
-
 I LOVE THIS PROBLEM. I'm so proud that I actually AC'd it. This problem was so deceivingly hard. The problem statement literally took my soul away given how much information it had. Funny enough, the problem was actually surprisingly easy to theory. Unironically the complicated problem statement actually gave a very straightforward solution. Since the problem is so complicated, there is no straightforward greedy so multi-state dijkstra is the only way to handle it. And simply bsta since its a maximising problem. Implementation on the other hand was a nightmare. I literally RTE'd and MLE'd so many times before randomly changing stuff and Ac'd using pragma's 🤣🤣🤣. My solution barely squeezed within the time limit tho, so I wonder if it is intended.
 
 - No greedy works since too many conditions  
