@@ -146,13 +146,9 @@ I LOVE THIS PROBLEM. I'm so proud that I actually AC'd it. This problem was so d
 ## Observation 1 — The maximum non-negative integer \(k\) is monotonic
 
 If a value of \(k\) is feasible, then any smaller value of \(k\) is also feasible.  
-Therefore, the answer is **monotonic**, and we should immediately think of:
+Therefore, the answer is **monotonic**, and we should immediately think of bsta
 
-$$
-\text{Binary Search on the Answer (BSTA)}.
-$$
-
-The remaining question is: **How do we check feasibility for a given \(k\)?**
+The question is: **How do we check feasibility for a given \(k\)?**
 
 ---
 
@@ -191,7 +187,7 @@ $$
 
 ---
 
-## Observation 4 — Add rotation states to the Dijkstra
+## Observation 4 — To keep track of the direction changes, add rotation states to the Dijkstra
 
 When leaving a **red** cell, all **blue** arrows rotate.  
 When leaving a **blue** cell, all **red** arrows rotate.
@@ -203,10 +199,10 @@ $$
 $$
 
 Where:
-
+$$
 - \(\text{redrot}\) = number of times red cells rotated  
 - \(\text{bluerot}\) = number of times blue cells rotated  
-
+$$
 ### Why modulo 4?
 
 Arrows cycle every four rotations:
