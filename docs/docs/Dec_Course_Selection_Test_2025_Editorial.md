@@ -227,9 +227,11 @@ bluerot %= 4;
 Without this:
 
 - State size becomes
+
 $$
-n \times m \times k \times k \quad \text{(MLE)}
+n \times m \times 150^2 \times 150^2 \quad \text{(MLE)}
 $$
+
 
 With modulo:
 
