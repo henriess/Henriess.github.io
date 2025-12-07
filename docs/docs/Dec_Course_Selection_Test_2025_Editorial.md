@@ -200,9 +200,10 @@ $$
 
 Where:
 $$
-- \(\text{redrot}\) = number of times red cells rotated  
-- \(\text{bluerot}\) = number of times blue cells rotated  
+\text{redrot} = \text{# of red rotations}, \quad
+\text{bluerot} = \text{# of blue rotations}
 $$
+
 ### Why modulo 4?
 
 Arrows cycle every four rotations:
