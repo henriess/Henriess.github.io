@@ -200,7 +200,7 @@ $$
 $$
 
 Where:
-\
+
 $$
 \begin{aligned}
 \text{redrot} &= \text{number of times red cells rotated} \\
