@@ -229,7 +229,7 @@ Without this:
 - State size becomes
 \
 $$
-  n \times m \times k \times k \quad \text{(MLE)}
+n \times m \times k \times k \quad \text{(MLE)}
 $$
 
 With modulo:
