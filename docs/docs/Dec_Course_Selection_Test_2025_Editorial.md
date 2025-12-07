@@ -236,7 +236,7 @@ n \times m \times 4 \times 4 \quad \text{(safe)}
 $$
 
 ---
-
+ 
 ## Observation 5 — How to determine answers -1 and -2
 
 We need to distinguish two special cases explicitly.
