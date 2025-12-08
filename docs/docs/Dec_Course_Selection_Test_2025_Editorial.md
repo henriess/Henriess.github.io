@@ -265,7 +265,7 @@ Otherwise, the smallest feasible \(k\) from binary search is the final answer.
 ---
 
 ## Code
-
+{% raw %}
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
