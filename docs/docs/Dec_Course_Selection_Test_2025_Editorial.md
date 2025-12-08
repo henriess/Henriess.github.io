@@ -139,7 +139,7 @@ int main() {
 **Link:** https://codebreaker.xyz/problem/reinforcement
 \
 
-I LOVE THIS PROBLEM. I'm so proud that I actually AC'd it. This problem was so deceivingly hard. The problem statement literally took my soul away given how much information it had. Funny enough, the problem was actually surprisingly easy to theory. Unironically the complicated problem statement actually gave a very straightforward solution. Since the problem is so complicated, there is no straightforward greedy so multi-state dijkstra is the only way to handle it. And simply bsta since its a maximising problem. Implementation on the other hand was a nightmare. I literally RTE'd and MLE'd so many times before randomly changing stuff and Ac'd using pragma's 🤣🤣🤣. My solution barely squeezed within the time limit tho, so I wonder if it is intended.
+Amazing Problem!. I'm so proud that I actually AC'd it. This problem was so deceivingly hard. The problem statement literally took my soul away given how much information it had. Funny enough, the problem was actually surprisingly easy to theory. Unironically the complicated problem statement actually gave a very straightforward solution. Since the problem is so complicated, there is no straightforward greedy so multi-state dijkstra is the only way to handle it. And simply bsta since its a maximising problem. Implementation on the other hand was a nightmare. I literally RTE'd and MLE'd so many times before randomly changing stuff and Ac'd using pragma's 🤣🤣🤣. My solution barely squeezed within the time limit tho, so I wonder if it is intended.
 
 - No greedy works since too many conditions  
 - Multi-state Dijkstra is the only approach that can handle all the information
@@ -230,14 +230,14 @@ Without this:
 - State size becomes
 
 $$
-n \times m \times 150^2 \times 150^2 \quad \text{(MLE)}
+h \times w \times hw \times hw \quad \text{(MLE)}
 $$
 
 
 With modulo:
 
 $$
-n \times m \times 4 \times 4 \quad \text{(safe)}
+h \times w \times 4 \times 4 \quad \text{(safe)}
 $$
 
 ---
@@ -263,6 +263,193 @@ To detect this:
 Otherwise, the smallest feasible \(k\) from binary search is the final answer.
 
 ---
+## Code
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+vector<vector<pair<char,char>>> grid;
+long long ans = 0;
+long long h,w,a,b;
+long long r;
+vector<vector<vector<vector<long long>>>> dist;//Max net reward to node i with j red rotations and k blue rotations 
+vector<pair<long long,long long>> moves = {{0,1},{0,-1},{1,0},{-1,0}};
+bool isvalid(long long i,long long j){
+	if (i>=h|| i<0 || j>=w || j<0){
+		return false;
+	}	
+	return true;
+}
+unordered_map<char,long long> um;
+bool check(long long mid){
+	dist.assign(h + 5,vector<vector<vector<long long>>>(w + 5,vector<vector<long long>>(5,vector<long long>(5, LLONG_MAX))));
+	priority_queue<vector<long long>,vector<vector<long long>>,greater<vector<long long>>> pq;
+	dist[a][b][0][0] = 0;
+	pq.push({0,a,b,0,0});//start point is a,b with net reward 0 at the start node and 0 red rotations and blue rotations so far 
+	while (!pq.empty()){
+		long long cr = pq.top()[1];//current row 
+		long long cc = pq.top()[2];//current col 
+		long long distance = pq.top()[0];// distance covered 
+		long long redrotations = pq.top()[3];
+		long long bluerotations = pq.top()[4];
+		
+		pq.pop();
+		if (dist[cr][cc][redrotations][bluerotations] < distance){
+			continue;
+		}
+		//leave the cell
+		if (grid[cr][cc].second == 'R'){
+			//blue cells will rotate their direction by 90 
+			bluerotations += 1;
+			bluerotations = bluerotations % 4;
+		}
+		else{
+			redrotations += 1;
+			redrotations = redrotations % 4;
+		}
+		for(auto move : moves){
+			long long nr = cr + move.first;//new row
+			long long nc = cc + move.second; // newcol
+			
+			if (!isvalid(nr,nc)){
+				continue;
+			}
+			long long weight = 0;
+			//check if move corresponds to the direction arrow is pointing 
+			char arrow = 'a';
+			long long save = um[grid[cr][cc].first];//number representation of the arrow 
+			//handle the direction change 
+			if (grid[cr][cc].second == 'R'){
+				save += redrotations;
+				save = save % 4;
+			}
+			else{
+				save += bluerotations;
+				save = save % 4;
+			}
+			
+			for (auto [key,val] : um){
+				if (save == val){
+					arrow = key;
+				}
+			}
+			bool direction = true;
+			if (arrow == '>'){
+				if (move.first == 0 && move.second == 1){
+					//add -1 to the penalty 
+					weight = 1;
+				}
+				else{
+					weight = mid;
+					direction = false;
+				}
+			}
+			if (arrow == '<'){
+				if (move.first == 0 && move.second == -1){
+					//add -1 to the penalty
+					weight = 1;
+				}
+				else{
+					weight = mid;
+					direction = false;
+				}
+			}
+			if (arrow == 'v'){
+				if (move.first == 1 && move.second == 0){
+					weight = 1;
+				}
+				else{
+					weight = mid;
+					direction = false;
+				}
+			}
+			if (arrow == '^'){
+				if (move.first == -1 && move.second == 0){
+					weight = 1;
+				}
+				else{
+					weight = mid;
+					direction = false;
+				}
+			}
+			long long newdist = distance + weight;
+				
+			if (newdist < dist[nr][nc][redrotations][bluerotations]){
+				dist[nr][nc][redrotations][bluerotations] = newdist;
+				pq.push({newdist,nr,nc,redrotations,bluerotations});
+			}
+		}
+	}
+	for(int i = 0;i<h;i++){
+		for(int j = 0;j<w;j++){
+			long long best = LLONG_MAX;
+			for(int k = 0;k<=3;k++){
+				for(int z = 0;z <=3;z++){
+					best = min(best, dist[i][j][k][z]);
+				}
+			}
+			if (best >= r){
+				return false;
+			}
+		}
+	}
+	return true;
+}
+void bsta(){
+	long long lb = 0;
+	long long ub = r;
+	long long mid = -1;
+	while (lb <= ub){
+		mid = (lb + ub) / 2;
+		if (check(mid)){
+			//increase 
+			lb = mid + 1;
+			ans = max(ans,mid);
+		}
+		else{
+			ub = mid - 1;
+		}
+	}
+}
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+	cin >> h >> w >> a >> b >> r;
+	grid.resize(h+5,vector<pair<char,char>>(w+5));
 
+
+	for(int i = 0;i<h;i++){
+		string s;cin >> s;
+		for(int j = 0;j<w;j++){
+			grid[i][j].first = s[j];
+		}
+	}
+	for(int i = 0;i<h;i++){
+		string s2;cin >> s2;
+		for(int j = 0;j<w;j++){
+			grid[i][j].second = s2[j];
+		}
+	}
+	//map each direction to a number 
+	um['^'] = 0;
+	um['>'] = 1;
+	um['v'] = 2;
+	um['<'] = 3;
+	if (!check(0)){
+		cout << -1;
+		return 0;
+	}
+	if (check(1e9)){
+		cout << -2;
+		return 0;
+	}
+	bsta();
+	
+	cout << ans;
+}
+```
 
 
